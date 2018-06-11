@@ -1,19 +1,17 @@
 package Controllers
 
-import java.time.{LocalDate, LocalDateTime, LocalTime}
 import java.time.temporal.ChronoUnit
+import java.time.{LocalDate, LocalDateTime, LocalTime}
 
 import Apps.IntroApp
 import Models._
 import Util.Settings
 import Views._
 import javafx.animation.{Animation, KeyFrame, Timeline}
-import javafx.scene.input.MouseEvent
 import javafx.event.{ActionEvent, EventHandler}
-import javafx.scene.Node
 import javafx.scene.control.TextField
+import javafx.scene.input.MouseEvent
 import javafx.scene.layout.HBox
-import javafx.scene.text.Text
 import javafx.stage.Stage
 import javafx.util.Duration
 
@@ -37,9 +35,13 @@ class KakuroController extends GenericController {
       }
     }))
 
+  def getKakuroBoard: KakuroBoard = kakuroBoard
+  def getLogicBoard: Array[Array[Int]] = logicBoard
+
   override def setStage(stage: Stage): Unit = {
     primaryStage = stage
   }
+
 
   override def showStage(): Unit = {
     kakuroView.injectKakuroBoard(generateCellBoard())
