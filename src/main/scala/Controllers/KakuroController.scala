@@ -37,6 +37,7 @@ class KakuroController extends GenericController {
 
   def getKakuroBoard: KakuroBoard = kakuroBoard
   def getLogicBoard: Array[Array[Int]] = logicBoard
+  def getSumBoard: SumBoard = sumBoard
 
   override def setStage(stage: Stage): Unit = {
     primaryStage = stage
@@ -566,6 +567,7 @@ class KakuroController extends GenericController {
     
     //WE HAVE TO CHECK WHETER BOARD IS FULLY MARKED OR NOT
     if(checkMarkedBoard(markedBoard)) {
+      sumBoard.showBoard()
       kakuroBoard
     } else {
       sumBoard = new SumBoard

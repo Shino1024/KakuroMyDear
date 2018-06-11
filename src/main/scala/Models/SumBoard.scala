@@ -2,7 +2,7 @@ package Models
 
 import Views.SumDirection
 import javafx.scene.Node
-import javafx.scene.layout.{GridPane, HBox, StackPane}
+import javafx.scene.layout.{GridPane, StackPane}
 import javafx.scene.text.Text
 
 
@@ -12,11 +12,13 @@ class SumBoard() {
   private var currentList: List[KakuroInputCell] = List()
   var sumCell: AuxiliarySumCell = _
 
+
+  def getAuxiliarySumCellList: List[AuxiliarySumCell] = matrix
+
   def createNewList(sumDirection: SumDirection):Unit = {
 
     sumCell = new AuxiliarySumCell(sumDirection)
     currentList = List()
-    sumCell.setInputCellList(currentList)
   }
 
   def addMatrixInputCell(cell: KakuroCell): Unit = {
@@ -32,6 +34,7 @@ class SumBoard() {
   def addMatrixSumList(value: Int): Unit = {
 
     sumCell.setValue(value)
+    sumCell.setInputCellList(currentList)
     matrix = matrix :+ sumCell
 
   }

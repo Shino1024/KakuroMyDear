@@ -12,8 +12,8 @@ class KakuroSpec extends PropSpec with TableDrivenPropertyChecks with GivenWhenT
     Table(
       ("size", "value"),
       (BoardSize.SMALL, 8),
-        (BoardSize.MEDIUM, 10),
-        (BoardSize.BIG, 12)
+      (BoardSize.MEDIUM, 10),
+      (BoardSize.BIG, 12)
     )
 
 
@@ -24,34 +24,55 @@ class KakuroSpec extends PropSpec with TableDrivenPropertyChecks with GivenWhenT
       info("—————-")
 
       Given("we have chosen size: " + size)
-        Settings.boardSize = size
+      Settings.boardSize = size
 
       When("we start game and create new and fresh controller")
-        val controller = new KakuroController
-        controller.generateCellBoard()
+      val controller = new KakuroController
+      controller.generateCellBoard()
 
 
       Then("the board should be a square with side length of " + value)
-        assert(Settings.boardSize.id == value )
-        assert(Settings.boardSize == size)
+      assert(Settings.boardSize.id == value)
+      assert(Settings.boardSize == size)
 
       And("the logic board representing black and white cells should be filled only with 0 or 1")
-      for(i <- 0 until Settings.boardSize.id) {
+      for (i <- 0 until Settings.boardSize.id) {
         for (j <- 0 until Settings.boardSize.id) {
-          val logicBoard= controller.getLogicBoard
+          val logicBoard = controller.getLogicBoard
           assert(logicBoard(i)(j) == 0 || logicBoard(i)(j) == 1)
         }
       }
 
       And("the kakuro board should be completely filled with kakuro cells")
-        for(i <- 0 until Settings.boardSize.id) {
-          for (j <- 0 until Settings.boardSize.id) {
-              assert(controller.getKakuroBoard.getMatrixCell(i,j).isInstanceOf[KakuroCell])
-          }
+      for (i <- 0 until Settings.boardSize.id) {
+        for (j <- 0 until Settings.boardSize.id) {
+          assert(controller.getKakuroBoard.getMatrixCell(i, j).isInstanceOf[KakuroCell])
         }
+      }
+
+      And("All sums should be possible to complete from digits 1-9 based on number of Input Cells")
+
+      val auxiliarySumList = controller.getSumBoard.getAuxiliarySumCellList
+
+      for(auxiliarySumCell <- auxiliarySumList ){
+
+        val sum = auxiliarySumCell.getValue()
+        var inputCellsNumber = 0
+
+        for(_ <- auxiliarySumCell.getInputCellList()){
+          inputCellsNumber = inputCellsNumber + 1
+          info("1")
+        }
+
+        val minSum = ((1 + inputCellsNumber) * inputCellsNumber) / 2
+        val maxSum = ((9 - inputCellsNumber + 1 + 9) * inputCellsNumber) / 2
+
+        assert( sum <= maxSum && sum >= minSum)
+
+      }
+
+
     }
 
   }
-
-
 }
