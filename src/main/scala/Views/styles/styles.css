@@ -1,0 +1,199 @@
+#Button {
+    -fx-text-fill: white;
+    -fx-font-size: 15;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-pref-height: 50;
+    -fx-pref-width: 150;
+    -fx-background-color: linear-gradient(#2f3441, #212531);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+    -fx-border-radius: 4px;
+    -fx-border-color: antiquewhite;
+}
+
+#Button:hover {
+    -fx-background-color: linear-gradient(#212531, #2f3441);
+}
+
+#Button:pressed {
+    -fx-background-color: linear-gradient(#0f0f0f, #2f3441);
+}
+
+#ButtonContainer {
+    -fx-padding: 10;
+    -fx-alignment: center;
+    -fx-pref-height: 50;
+    -fx-pref-width: 150;
+}
+
+
+#InfoText {
+    -fx-fill: darkred;
+    -fx-font-size: 15;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-aligment: center;
+}
+
+
+
+#TitleCaption {
+    -fx-fill: darkred;
+    -fx-font-size: 40;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-aligment: center;
+}
+
+#TitleCaptionContainer {
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
+
+#MinorCaption {
+    -fx-fill: darkgreen;
+    -fx-font-size: 20;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-aligment: center;
+}
+
+#MinorCaptionContainer {
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
+
+#TinyCaption {
+    -fx-fill: darkorange;
+    -fx-font-size: 15;
+    -fx-font-family: "Arial";
+    -fx-font-weight: normal;
+    -fx-aligment: center;
+}
+
+#TinyCaptionContainer {
+    -fx-padding: 3;
+    -fx-alignment: center;
+}
+
+#InputCellText {
+    -fx-fill: black;
+    -fx-font-size: 25;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-aligment: center;
+}
+
+#InputMultiCellText {
+    -fx-fill: black;
+    -fx-font-size: 12;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-aligment: center;
+    -fx-text-alignment:center;
+}
+
+#InputCell {
+    -fx-background-color: white;
+    -fx-alignment: center;
+    -fx-border-color:  black;
+    -fx-border-width: 1;
+    -fx-min-height: 40;
+    -fx-min-width: 40;
+    -fx-max-height: 40;
+    -fx-max-width: 40;
+}
+
+#SelectedInputCell {
+    -fx-background-color: antiquewhite;
+    -fx-alignment: center;
+    -fx-border-color:  black;
+    -fx-border-width: 1;
+    -fx-min-height: 40;
+    -fx-min-width: 40;
+    -fx-max-height: 40;
+    -fx-max-width: 40;}
+
+#AdjacentCell {
+    -fx-background-color: #a9eea5;
+    -fx-alignment: center;
+    -fx-border-color:  black;
+    -fx-border-width: 1;
+    -fx-min-height: 40;
+    -fx-min-width: 40;
+    -fx-max-height: 40;
+    -fx-max-width: 40;}
+
+#HintCell {
+    -fx-alignment: center;
+    -fx-background-color:
+        linear-gradient(to left bottom, #4d5261 50%, #212531 50%);
+    -fx-min-height: 40;
+    -fx-min-width: 40;
+    -fx-max-height: 40;
+    -fx-max-width: 40;
+}
+
+#HintCellText {
+    -fx-fill: whitesmoke;
+    -fx-font-size: 14;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#EmptyCell {
+    -fx-alignment: center;
+    -fx-padding: 10;
+}
+
+#HighscoreTable {
+    -fx-pref-width: 400;
+    -fx-pref-height: 145;
+}
+
+#IntroSizeChooser {
+    -fx-alignment: center;
+}
+
+#KakuroControlPanel {
+    -fx-alignment: center;
+}
+
+.radio-button {
+    -fx-padding: 4;
+    -fx-font-size: 16;
+    -fx-text-fill: #BBBBBB;
+}
+
+.radio-button .radio {
+    -fx-background-color: #818591;
+}
+
+.radio-button .radio:selected {
+    -fx-background-color: #414551;
+}
+
+.radio-button .radio:armed {
+    -fx-background-color: #212541;
+}
+
+.radio-button .dot {
+    -fx-background-radius: 15;
+    -fx-padding: 8;
+}
+
+#Window {
+    -fx-padding: 10;
+    -fx-max-width: 300;
+    -fx-max-height: 150;
+    -fx-border-radius: 10;
+    -fx-border-width: 5;
+    -fx-border-color: linear-gradient(#010511, #0f1421);
+    -fx-background-color: linear-gradient(#0f1421, #010511);
+    -fx-alignment: center;
+}
+
+#App {
+    -fx-padding: 10;
+    -fx-background-color: linear-gradient(#0f1421, #010511);
+}
