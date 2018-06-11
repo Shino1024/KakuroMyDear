@@ -567,7 +567,6 @@ class KakuroController extends GenericController {
     
     //WE HAVE TO CHECK WHETER BOARD IS FULLY MARKED OR NOT
     if(checkMarkedBoard(markedBoard)) {
-      sumBoard.showBoard()
       kakuroBoard
     } else {
       sumBoard = new SumBoard

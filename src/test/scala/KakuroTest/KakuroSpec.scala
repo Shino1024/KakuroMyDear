@@ -61,7 +61,6 @@ class KakuroSpec extends PropSpec with TableDrivenPropertyChecks with GivenWhenT
 
         for(_ <- auxiliarySumCell.getInputCellList()){
           inputCellsNumber = inputCellsNumber + 1
-          info("1")
         }
 
         val minSum = ((1 + inputCellsNumber) * inputCellsNumber) / 2
